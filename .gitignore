@@ -1,5 +1,7 @@
+.main.bib
+.main.tex
 .citations
-.citediff
+.citediff*
 .compiled
 .figs
 .undefcit
@@ -11,3 +13,4 @@
 *.dvi
 *.log
 *.pdf
+.*.eps

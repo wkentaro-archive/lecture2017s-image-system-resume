@@ -115,11 +115,14 @@ CP=cp
 
 #LATEX=platex -shell-escape -interaction=nonstopmode -kanji=euc
 LATEX=platex
-DIST=$(shell lsb_release -rs)
-ifeq ($(DIST),12.04)
-  BIBTEX=jbibtex
-else
-  BIBTEX=pbibtex -kanji=euc
+UNAME=$(shell uname)
+ifeq ($(UNAME), Linux)
+  DIST=$(shell lsb_release -rs)
+  ifeq ($(DIST),12.04)
+    BIBTEX=jbibtex
+  else
+    BIBTEX=pbibtex -kanji=euc
+  endif
 endif
 
 #for mac
